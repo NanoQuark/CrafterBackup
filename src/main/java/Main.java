@@ -34,7 +34,7 @@ public final class Main {
 				System.out.println("Backed Up the End. Backup location: " + backupEnd.get().getPath());
 			}
 			
-		}, 0L, 1000*60*60); // millis * seconds * minutes
+		}, 0L, 1000*60*30); // millis * seconds * minutes
 		
 	}
 
