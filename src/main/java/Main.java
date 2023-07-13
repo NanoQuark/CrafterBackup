@@ -11,17 +11,17 @@ public final class Main {
 
 	public static void main(String[] args) {
 
-		SaveSystem ssOverworld = new SaveSystem(50, "../server/world", "../server/backup_world");
-		SaveSystem ssNether = new SaveSystem(50, "../server/world_nether", "../server/backup_world_nether");
-		SaveSystem ssEnd = new SaveSystem(50, "../server/world_the_end", "../server/backup_world_the_end");
+		SaveSystem ssOverworld = new SaveSystem(50, args[0] + "\\world", args[0] + "\\backup_world");
+		SaveSystem ssNether = new SaveSystem(50, args[0] + "\\world_nether", args[0] + "\\backup_world_nether");
+		SaveSystem ssEnd = new SaveSystem(50, args[0] + "\\world_the_end", args[0] + "\\backup_world_the_end");
 		
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 			@Override
 			public void run() {
-				ObjectHolder<File> backupOverworld = new ObjectHolder<>(),
-						backupNether = new ObjectHolder<>(),
-						backupEnd = new ObjectHolder<>();
+				ObjectHolder<File> backupOverworld = new ObjectHolder<>();
+				ObjectHolder<File> backupNether = new ObjectHolder<>();
+				ObjectHolder<File> backupEnd = new ObjectHolder<>();
 				try {
 					backupOverworld = ssOverworld.save();
 					backupNether = ssNether.save();
