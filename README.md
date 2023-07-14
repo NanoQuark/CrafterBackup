@@ -6,6 +6,6 @@
 5. LINUX ONLY:
 ```
 #!/bin/bash
-java.exe -jar CrafterBackup.jar server
+java -jar CrafterBackup.jar server
 ```
 Run this inside any shell file in the same location as the jar.
