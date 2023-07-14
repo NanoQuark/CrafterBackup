@@ -55,7 +55,9 @@ public class SaveSystem {
 		}
 
 		if (savesList.size() > worldArraySize) {
-			FileUtils.forceDelete(savesList.get(savesList.size() - 1).get());
+			ObjectHolder<File> toDel = savesList.get(savesList.size() - 1);
+			System.out.println("Old backup deleted: " + toDel.get().getPath());
+			FileUtils.forceDelete(toDel.get());
 		}
 		return new ObjectHolder<>(backedUpWorldDirectory);
 	}
